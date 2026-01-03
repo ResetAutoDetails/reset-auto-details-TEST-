@@ -141,7 +141,7 @@ select { width: 100%; padding: 10px; border-radius: 6px; border: none; backgroun
   white-space: nowrap;       /* keep on one line */
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 80px;           /* limits width */
+  max-width: 90px;           /* limits width */
   display: inline-block;
   text-align: center;
 }
@@ -182,11 +182,12 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   gap: 20px;
 }
 
+/* Only for Interior & Exterior Add-Ons */
 .addon-section label {
   display: flex;
-  flex-direction: row-reverse;   
+  flex-direction: row;   /* normal flow: text left, checkbox right */
   align-items: center;
-  gap: 10px;               /* spacing between checkbox & text */
+  gap: 10px;               
   background: #161616;
   padding: 10px 12px;
   border-radius: 10px;
@@ -194,6 +195,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   transition: background 0.2s ease;
   cursor: pointer;
 }
+
 
 
 .addon-section label:hover {
