@@ -130,7 +130,21 @@ select { width: 100%; padding: 10px; border-radius: 6px; border: none; backgroun
 /* Addons */
 .addons { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
 .addons label { display:flex; justify-content:space-between; align-items:center; background:#161616; padding:10px; border-radius:8px; }
-.best-seller { background: var(--red); color: var(--white); font-size:0.7rem; font-weight:bold; padding:3px 8px; border-radius:6px; margin-left:8px; }
+/* Add-On Badges */
+.best-seller {
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.65rem;       /* slightly smaller */
+  font-weight: bold;
+  padding: 2px 6px;         /* smaller padding */
+  border-radius: 8px;
+  white-space: nowrap;       /* keep on one line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px;           /* limits width */
+  display: inline-block;
+  text-align: center;
+}
 
 /* Locked */
 .locked-addon { opacity:0.45; cursor:not-allowed; }
