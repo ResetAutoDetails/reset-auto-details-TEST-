@@ -215,6 +215,25 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   color: #000;
   font-weight: bold;
 }
+/* Make all addon labels Right-to-Left */
+.addon-section label {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  text-align: right;
+}
+
+/* Keep text readable and aligned */
+.addon-section label span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Ensure checkbox stays on the far right */
+.addon-section input[type="checkbox"] {
+  margin-left: 8px;
+  margin-right: 0;
+}
 
 </style>
 </head>
@@ -369,7 +388,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     <input type="checkbox" class="addon" value="45" data-included="luxury">
     Steam Cleanse
   </span>
-  <span class="best-seller">BEST</span>
+  <span class="best-seller">BEST SELLER</span>
 </label>
 
     
