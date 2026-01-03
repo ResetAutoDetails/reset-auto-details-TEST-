@@ -285,6 +285,21 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   margin-left: 8px;
   margin-right: 0;
 }
+/* Calculator hidden state */
+.calculator.hidden {
+  display: none;
+}
+
+/* Disabled state (after opening) */
+.calculator.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* Allow checkbox to work even when disabled */
+.calculator.disabled #agreement {
+  pointer-events: auto;
+}
 
 </style>
 </head>
@@ -389,7 +404,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     <span>Click to see an estimate price in seconds</span>
   </button>
 
-<div class="calculator disabled" id="calculator">
+<div class="calculator hidden disabled" id="calculator">
   <div class="calc-group">
     <label class="agreement-box">
       <input type="checkbox" id="agreement">
@@ -613,15 +628,15 @@ function updateLuxuryAddons() {
 pkgSelect.addEventListener('change', updateLuxuryAddons);
 
 </script>
-<script>
+ <script>
   const toggleBtn = document.querySelector('.estimate-toggle');
-  const calculator = document.querySelector('.calculator');
+  const calculator = document.getElementById('calculator');
 
   toggleBtn.addEventListener('click', () => {
-    calculator.classList.toggle('open');
-    calculator.classList.toggle('collapsed');
+    calculator.classList.toggle('hidden');
   });
 </script>
+
 
 
 </body>
