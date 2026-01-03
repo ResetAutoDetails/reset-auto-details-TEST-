@@ -311,6 +311,10 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   background: var(--red);
   color: #fff;
 }
+.package.luxury {
+  border: 2px solid gold;
+  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.25);
+}
 
 </style>
 </head>
@@ -408,8 +412,8 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
       <p><strong>Starting at $65</strong></p>
     </div>
    <!-- FULL RESET -->
-<div class="package full-reset" data-package="70">
-  <h3>Full Reset <span class="badge">BEST VALUE</span></h3>
+<div class="package full-reset" data-package="75">
+  <h3>Full Reset <span class="badge">SAVE $30!</span></h3>
   <p>Complete interior & exterior detail.</p>
   <p>Includes everything in <strong>Exterior Reset</strong> + <strong>Interior Reset</strong>.</p>
 
@@ -433,12 +437,28 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
 </div>
 
     <!-- LUXURY FINISH -->
-<div class="package luxury-finish" data-package="155">
-  <h3>Luxury Finish <span class="badge">ULTIMATE DETAIL</span></h3>
-  <p>Complete interior & exterior detail with premium add-ons.</p>
-  <p>Includes everything in <strong>Full Reset</strong> + <strong>Seat & Carpet Shampoo</strong>, <strong>Protective Wax</strong>, <strong>Steam Cleanse</strong>.</p>
+
+<div class="package full-reset luxury" data-package="155">
+  <h3>
+    Luxury Finish
+    <span class="badge">PREMIUM • SAVE $60</span>
+  </h3>
+
+  <p>Our most complete detailing experience, featuring 3 of our most popular add ons.</p>
+
+  <details>
+    <summary>View what's included</summary>
+    <ul>
+      <li>Everything in <strong>Full Reset</strong></li>
+      <li>Seat & Carpet Shampoo</li>
+      <li>Protective Wax</li>
+      <li>Steam Cleanse</li>
+    </ul>
+  </details>
+
   <p><strong>Starting at $155</strong></p>
 </div>
+
 
   </div>
 </section>
@@ -509,9 +529,9 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     <label>Package</label>
    <select id="package">
   <option value="0">Select</option>
-  <option value="30">Exterior Reset</option>
-  <option value="55">Interior Reset</option>
-  <option value="70">Full Reset</option>
+  <option value="40">Exterior Reset</option>
+  <option value="65">Interior Reset</option>
+  <option value="75">Full Reset</option>
  <option value="155">Luxury Finish</option>
 </select>
   </div>
@@ -529,8 +549,8 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     <label>Condition</label>
     <select id="condition">
       <option value="1">Light</option>
-      <option value="1.25">Moderate</option>
-      <option value="1.5">Heavy</option>
+      <option value="1.35">Moderate</option>
+      <option value="1.75">Heavy</option>
     </select>
   </div>
 
