@@ -529,8 +529,14 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
 <footer>© 2025 Reset Auto Details</footer>
 
 <script>
-const agreement = document.getElementById('agreement');
-const calculator = document.getElementById('calculator');
+
+  const agreement = document.getElementById('agreement');
+  const calculatorBox = document.getElementById('calculator');
+
+  agreement.addEventListener('change', () => {
+    calculatorBox.classList.toggle('disabled', !agreement.checked);
+  });
+
 const pkgSelect = document.getElementById('package');
 const sizeSelect = document.getElementById('size');
 const conditionSelect = document.getElementById('condition');
@@ -616,6 +622,7 @@ pkgSelect.addEventListener('change', updateLuxuryAddons);
     calculator.classList.toggle('collapsed');
   });
 </script>
+
 
 </body>
 </html>
