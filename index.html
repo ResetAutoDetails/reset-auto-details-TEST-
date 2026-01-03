@@ -81,21 +81,16 @@ section { padding: 80px 20px; max-width: 1200px; margin: auto; }
 .package details {
   margin-top: 10px;
 }
-
-/* Summary styling */
 .package summary {
   cursor: pointer;
   font-weight: 600;
-  color: #c1121f;
+  color: var(--red);
   list-style: none;
   user-select: none;
 }
-
 .package summary::marker {
   display: none;
 }
-
-/* Lists inside details */
 .package ul {
   max-height: 0;
   overflow: hidden;
@@ -104,13 +99,10 @@ section { padding: 80px 20px; max-width: 1200px; margin: auto; }
   color: #ddd;
   margin-top: 0;
 }
-
 .package ul li {
   margin-bottom: 6px;
   color: #ddd;
 }
-
-/* Desktop hover expands lists automatically */
 @media (hover: hover) and (pointer: fine) {
   .package:hover ul {
     max-height: 500px;
@@ -125,23 +117,30 @@ section { padding: 80px 20px; max-width: 1200px; margin: auto; }
 .calc-group { margin-bottom: 20px; }
 label { display: block; margin-bottom: 6px; color: var(--gray); }
 select { width: 100%; padding: 10px; border-radius: 6px; border: none; background: #222; color: var(--white); }
+
 /* Agreement */
 .agreement-box { background: #161616; border: 2px solid var(--red); padding: 15px; border-radius: 10px; display: flex; gap: 10px; align-items: center; }
+
 /* Addons */
 .addons { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
 .addons label { display:flex; justify-content:space-between; align-items:center; background:#161616; padding:10px; border-radius:8px; }
 .best-seller { background: var(--red); color: var(--white); font-size:0.7rem; font-weight:bold; padding:3px 8px; border-radius:6px; margin-left:8px; }
+
 /* Locked */
 .locked-addon { opacity:0.45; cursor:not-allowed; }
 .locked-addon::after { content:" 🔒"; color:var(--red); }
+
 /* Price */
 .price-output { font-size:1.8rem; margin-top:20px; color: var(--red); }
+
 /* Socials */
 .socials { display:flex; gap:20px; font-size:1.6rem; }
 .socials i { transition: transform 0.2s ease, color 0.2s ease; }
 .socials i:hover { transform: scale(1.15); color: var(--red); }
+
 footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(--gray); }
-.addon-section {
+
+  .addon-section {
   background: #121212;
   border: 1px solid #222;
   border-radius: 14px;
@@ -191,7 +190,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   <div class="hero-content">
     <h1>Reset <span class="accent">Auto Details</span></h1>
     <p>Mobile Detailing • Clean. Reset. Repeat.</p>
-    <a href="tel:5555555555" class="btn">Call Now</a>
+    <a href="tel:7736917623" class="btn">Call Now</a>
   </div>
 </section>
 
@@ -206,7 +205,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   <h2>Detailing Packages</h2>
   <div class="packages">
     <!-- EXTERIOR RESET -->
-    <div class="package" data-package="100">
+    <div class="package" data-package="20">
       <h3>Exterior Reset</h3>
       <p>Professional exterior-only detail.</p>
       <details>
@@ -218,30 +217,30 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
           <li>Tire shine</li>
         </ul>
       </details>
-      <p><strong>Starting at $100</strong></p>
+      <p><strong>Starting at $20</strong></p>
     </div>
     <!-- INTERIOR RESET -->
-    <div class="package" data-package="160">
+    <div class="package" data-package="50">
       <h3>Interior Reset</h3>
       <p>Deep interior refresh.</p>
       <details>
         <summary>View what's included</summary>
         <ul>
-          <li>All surfaces vacuumed</li>
+          <li>All surfaces cleaned and wiped down</li>
           <li>Clean floor mats</li>
-          <li>Scrub carpet & upholstery</li>
+          <li>Scrub carpet and seats</li>
           <li>Interior glass & doors cleaned</li>
           <li>Matte finish</li>
         </ul>
       </details>
-      <p><strong>Starting at $160</strong></p>
+      <p><strong>Starting at $50</strong></p>
     </div>
     <!-- FULL RESET -->
-    <div class="package full-reset" data-package="220">
+    <div class="package full-reset" data-package="70">
       <h3>Full Reset <span class="badge">BEST VALUE • SAVE $$</span></h3>
       <p>Complete interior & exterior detail.</p>
       <p>Includes everything in <strong>Exterior Reset</strong> + <strong>Interior Reset</strong>.</p>
-      <p><strong>Starting at $220</strong></p>
+      <p><strong>Starting at $70</strong></p>
     </div>
   </div>
 </section>
@@ -261,9 +260,9 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     <label>Package</label>
     <select id="package">
       <option value="0">Select</option>
-      <option value="100">Exterior Reset</option>
-      <option value="160">Interior Reset</option>
-      <option value="220">Full Reset</option>
+      <option value="30">Exterior Reset</option>
+      <option value="55">Interior Reset</option>
+      <option value="70">Full Reset</option>
     </select>
   </div>
 
@@ -271,17 +270,8 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     <label>Vehicle Size</label>
     <select id="size">
       <option value="1">Sedan</option>
-      <option value="1.2">SUV</option>
-      <option value="1.3">Truck</option>
-    </select>
-  </div>
-
-  <div class="calc-group">
-    <label>Condition</label>
-    <select id="condition">
-      <option value="1">Light</option>
-      <option value="1.2">Moderate</option>
-      <option value="1.4">Heavy</option>
+      <option value="1.15">Small Truck/Small SUV</option>
+      <option value="1.2">Large Truck/Large SUV</option>
     </select>
   </div>
 <div class="addons">
@@ -357,7 +347,14 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     </label>
   </div>
 
-</div>
+  <div class="calc-group">
+    <label>Condition</label>
+    <select id="condition">
+      <option value="1">Light</option>
+      <option value="1.2">Moderate</option>
+      <option value="1.4">Heavy</option>
+    </select>
+  </div>
 
 
   <div class="price-output" id="price">$0</div>
@@ -378,63 +375,70 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
 
 <script>
 const agreement = document.getElementById('agreement');
-const pkg = document.getElementById('package');
-const size = document.getElementById('size');
-const condition = document.getElementById('condition');
+const calculator = document.getElementById('calculator');
+const pkgSelect = document.getElementById('package');
+const sizeSelect = document.getElementById('size');
+const conditionSelect = document.getElementById('condition');
 const addons = document.querySelectorAll('.addon');
 const priceOutput = document.getElementById('price');
-const calculator = document.getElementById('calculator');
 
+// Enable/disable calculator based on agreement
+agreement.addEventListener('change', () => {
+  if (agreement.checked) {
+    calculator.classList.remove('disabled');
+    calculate(); // recalc immediately when enabled
+  } else {
+    calculator.classList.add('disabled');
+    priceOutput.textContent = "$0";
+  }
+});
+
+// Calculate price
 function calculate() {
-  if (!agreement.checked) { calculator.classList.add('disabled'); priceOutput.textContent = "$0"; return; }
-  calculator.classList.remove('disabled');
-  let total = Number(pkg.value) * Number(size.value) * Number(condition.value);
-  addons.forEach(addon => { if (addon.checked) total += Number(addon.value); });
+  let total = Number(pkgSelect.value) || 0;
+  total *= Number(sizeSelect.value) || 1;
+  total *= Number(conditionSelect.value) || 1;
+
+  addons.forEach(addon => {
+    if (addon.checked) total += Number(addon.value) || 0;
+  });
+
   priceOutput.textContent = "$" + Math.round(total);
 }
 
-document.querySelectorAll('input, select').forEach(el => el.addEventListener('change', calculate));
+// Recalculate whenever inputs change
+[pkgSelect, sizeSelect, conditionSelect, ...addons].forEach(el => {
+  el.addEventListener('change', calculate);
+});
 
-// Auto-select package when clicking card
 const packageCards = document.querySelectorAll('.package');
 packageCards.forEach(card => {
-  card.addEventListener('click', () => {
+  card.addEventListener('click', (e) => {
+    // Ignore clicks on <summary> (so it can toggle details)
+    if (e.target.tagName.toLowerCase() === 'summary') return;
+
     const packageValue = card.getAttribute('data-package');
-    pkg.value = packageValue;
-    calculate();
-    document.getElementById('calculator').scrollIntoView({behavior: 'smooth'});
+    pkgSelect.value = packageValue;
+    if (agreement.checked) calculate();
   });
 });
 
-// Mobile toggle details
-const detailsElements = document.querySelectorAll('.package details');
-detailsElements.forEach(detail => {
-  detail.addEventListener('click', e => {
-    if (window.matchMedia("(hover: none)").matches) {
-      e.preventDefault();
-      const ul = detail.querySelector('ul');
-      ul.style.maxHeight = ul.style.maxHeight && ul.style.maxHeight !== "0px" ? "0px" : "500px";
-    }
-  });
-});
-  // Mobile tap toggle for details
-const detailsElements = document.querySelectorAll('.package details');
 
+const detailsElements = document.querySelectorAll('.package details');
 detailsElements.forEach(detail => {
   detail.addEventListener('click', (e) => {
     if (window.matchMedia("(hover: none)").matches) {
-      e.preventDefault(); // prevent default toggle
       const ul = detail.querySelector('ul');
-      if (ul.style.maxHeight && ul.style.maxHeight !== "0px") {
-        ul.style.maxHeight = "0px"; // close
-      } else {
-        ul.style.maxHeight = "500px"; // open
-      }
+      // optional smooth toggle for mobile
+      ul.style.maxHeight = ul.style.maxHeight && ul.style.maxHeight !== "0px" ? "0px" : "500px";
     }
   });
 });
 
 </script>
+
+
+
 
 </body>
 </html>
