@@ -21,6 +21,9 @@
   --red: #c1121f;
   --white: #f5f5f5;
   --gray: #b1b1b1;
+  --gold: #d4af37;
+--gold-soft: rgba(212, 175, 55, 0.25);
+
 }
 
 /* GENERAL */
@@ -261,11 +264,21 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   background: #1f1f1f;
   box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
 }
-.package.luxury-finish .badge {
-  background: #ffd700;
+.package.luxury .badge {
+  background: linear-gradient(135deg, #f5e28a, var(--gold));
   color: #000;
-  font-weight: bold;
+  font-weight: 800;
+  letter-spacing: 0.5px;
 }
+  .package.luxury summary {
+  color: var(--gold);
+}
+
+.package.luxury summary:hover {
+  text-decoration: underline;
+}
+
+
 /* Make all addon labels Right-to-Left */
 .addon-section label {
   flex-direction: row-reverse;
@@ -312,9 +325,11 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   color: #fff;
 }
 .package.luxury {
-  border: 2px solid gold;
-  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.25);
+  border: 2px solid var(--gold);
+  background: linear-gradient(180deg, #1a1a1a, #121212);
+  box-shadow: 0 18px 35px var(--gold-soft);
 }
+
 
 </style>
 </head>
