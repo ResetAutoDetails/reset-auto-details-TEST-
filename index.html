@@ -189,6 +189,16 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   flex: 1;
   line-height: 1.4;
 }
+.package.luxury-finish {
+  border: 2px solid #ffd700; /* Gold color to make it stand out */
+  background: #1f1f1f;
+  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
+}
+.package.luxury-finish .badge {
+  background: #ffd700;
+  color: #000;
+  font-weight: bold;
+}
 
 </style>
 </head>
@@ -202,7 +212,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   </video>
   <div class="hero-content">
     <h1>Reset <span class="accent">Auto Details</span></h1>
-    <p>Mobile Detailing • Clean. Reset. Repeat.</p>
+    <p>Mobile Detailing Made Easy</p>
     <a href="tel:7736917623" class="btn">Call Now</a>
    <a href="sms:7736917623" class="btn msg-btn">Message</a>
   </div>
@@ -236,15 +246,15 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     <!-- INTERIOR RESET -->
     <div class="package" data-package="55">
       <h3>Interior Reset</h3>
-      <p>Deep interior refresh.</p>
+      <p> Professional interior-only detail.</p>
       <details>
         <summary>View what's included</summary>
         <ul>
-          <li>All surfaces cleaned and wiped down</li>
+          <li>All surfaces cleansed</li>
           <li>Clean floor mats</li>
-          <li>Scrub carpet and seats</li>
-          <li>Interior glass & doors cleaned</li>
-          <li>Matte finish</li>
+           <li>Full vacuum finish</li>
+          <li>Scrubbed carpet and seats</li>
+          <li>Interior glass & doors cleansed</li>
         </ul>
       </details>
       <p><strong>Starting at $55</strong></p>
@@ -256,6 +266,14 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
       <p>Includes everything in <strong>Exterior Reset</strong> + <strong>Interior Reset</strong>.</p>
       <p><strong>Starting at $70</strong></p>
     </div>
+    <!-- LUXURY FINISH -->
+<div class="package luxury-finish" data-package="120">
+  <h3>Luxury Finish <span class="badge">ULTIMATE DETAIL</span></h3>
+  <p>Complete interior & exterior detail with premium add-ons.</p>
+  <p>Includes everything in <strong>Full Reset</strong> + <strong>Seat & Carpet Shampoo</strong>, <strong>Protective Wax</strong>, <strong>Steam Cleanse</strong>.</p>
+  <p><strong>Starting at $120</strong></p>
+</div>
+
   </div>
 </section>
 
@@ -272,12 +290,13 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
 
   <div class="calc-group">
     <label>Package</label>
-    <select id="package">
-      <option value="0">Select</option>
-      <option value="40">Exterior Reset</option>
-      <option value="55">Interior Reset</option>
-      <option value="70">Full Reset</option>
-    </select>
+   <select id="package">
+  <option value="0">Select</option>
+  <option value="30">Exterior Reset</option>
+  <option value="55">Interior Reset</option>
+  <option value="70">Full Reset</option>
+  <option value="120">Luxury Finish</option>
+</select>
   </div>
 
   <div class="calc-group">
