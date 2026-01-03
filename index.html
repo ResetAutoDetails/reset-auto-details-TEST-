@@ -164,6 +164,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
 
 .addon-section label {
   display: flex;
+  flex-direction: row-reverse;   
   align-items: center;
   gap: 10px;               /* spacing between checkbox & text */
   background: #161616;
@@ -177,6 +178,10 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
 
 .addon-section label:hover {
   background: #1c1c1c;
+}
+.addon-section label span {
+  flex: 1;
+  line-height: 1.4;
 }
 
 </style>
