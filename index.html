@@ -140,7 +140,7 @@ select { width: 100%; padding: 10px; border-radius: 6px; border: none; backgroun
 
 footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(--gray); }
 
-  .addon-section {
+.addon-section {
   background: #121212;
   border: 1px solid #222;
   border-radius: 14px;
@@ -274,6 +274,16 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
       <option value="1.2">Large Truck/Large SUV</option>
     </select>
   </div>
+
+  <div class="calc-group">
+    <label>Condition</label>
+    <select id="condition">
+      <option value="1">Light</option>
+      <option value="1.2">Moderate</option>
+      <option value="1.4">Heavy</option>
+    </select>
+  </div>
+
 <div class="addons">
 
   <!-- INTERIOR ADDONS -->
@@ -347,14 +357,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     </label>
   </div>
 
-  <div class="calc-group">
-    <label>Condition</label>
-    <select id="condition">
-      <option value="1">Light</option>
-      <option value="1.2">Moderate</option>
-      <option value="1.4">Heavy</option>
-    </select>
-  </div>
+</div>
 
 
   <div class="price-output" id="price">$0</div>
