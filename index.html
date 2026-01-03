@@ -249,7 +249,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     <h1>Reset <span class="accent">Auto Details</span></h1>
     <p>Mobile Detailing Made Easy</p>
     <a href="tel:7736917623" class="btn">Call Now</a>
-   <a href="sms:7736917623" class="btn msg-btn">Message to Book</a>
+   <a href="sms:7736917623" class="btn msg-btn">Message To Book</a>
   </div>
 </section>
 
@@ -331,7 +331,14 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
 
 <!-- CALCULATOR -->
 <section>
-<h2>Instant Price Estimate</h2>
+<div class="estimate-wrapper">
+
+  <button class="estimate-toggle" type="button">
+    Instant Price Estimate
+    <span>Click to see your price in seconds</span>
+  </button>
+
+  <div class="calculator collapsed">
 <div class="calculator disabled" id="calculator">
   <div class="calc-group">
     <label class="agreement-box">
@@ -364,7 +371,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     <label>Condition</label>
     <select id="condition">
       <option value="1">Light</option>
-      <option value="1.2">Moderate</option>
+      <option value="1.25">Moderate</option>
       <option value="1.5">Heavy</option>
     </select>
   </div>
@@ -453,6 +460,9 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
       Window Tint
     </label>
   </div>
+
+</div>
+</div>
 
 </div>
 
