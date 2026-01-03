@@ -9,6 +9,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+  .msg-btn {
+  background: #ffffff;
+  color: #000000;
+  margin-left: 12px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.msg-btn:hover {
+  background: #f2f2f2;
+  transform: translateY(-2px);
+}
+
 /* VARIABLES */
 :root {
   --black: #0b0b0b;
@@ -198,6 +210,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     <h1>Reset <span class="accent">Auto Details</span></h1>
     <p>Mobile Detailing • Clean. Reset. Repeat.</p>
     <a href="tel:7736917623" class="btn">Call Now</a>
+   <a href="sms:7736917623" class="btn msg-btn">Message</a>
   </div>
 </section>
 
