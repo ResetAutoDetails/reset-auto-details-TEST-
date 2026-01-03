@@ -123,6 +123,57 @@ section { padding: 80px 20px; max-width: 1200px; margin: auto; }
 .calc-group { margin-bottom: 20px; }
 label { display: block; margin-bottom: 6px; color: var(--gray); }
 select { width: 100%; padding: 10px; border-radius: 6px; border: none; background: #222; color: var(--white); }
+  /* Estimate Toggle */
+.estimate-wrapper {
+  margin-top: 50px;
+}
+
+.estimate-toggle {
+  width: 100%;
+  background: #161616;
+  border: 2px solid var(--red);
+  border-radius: 18px;
+  padding: 22px;
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.estimate-toggle span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray);
+  margin-top: 6px;
+}
+
+.estimate-toggle:hover {
+  background: #1d1d1d;
+  transform: translateY(-2px);
+}
+
+/* Collapsed calculator */
+.calculator.collapsed {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin-top: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+/* Open calculator */
+.calculator.open {
+  max-height: 5000px;
+  opacity: 1;
+  margin-top: 30px;
+  pointer-events: auto;
+}
+
 
 /* Agreement */
 .agreement-box { background: #161616; border: 2px solid var(--red); padding: 15px; border-radius: 10px; display: flex; gap: 10px; align-items: center; }
@@ -561,6 +612,15 @@ function updateLuxuryAddons() {
 // run this whenever package changes
 pkgSelect.addEventListener('change', updateLuxuryAddons);
 
+</script>
+<script>
+  const toggleBtn = document.querySelector('.estimate-toggle');
+  const calculator = document.querySelector('.calculator');
+
+  toggleBtn.addEventListener('click', () => {
+    calculator.classList.toggle('open');
+    calculator.classList.toggle('collapsed');
+  });
 </script>
 
 </body>
