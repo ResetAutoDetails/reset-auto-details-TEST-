@@ -419,7 +419,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   <option value="30">Exterior Reset</option>
   <option value="55">Interior Reset</option>
   <option value="70">Full Reset</option>
-  <option value="155">Luxury Finish</option>
+ <option value="155">Luxury Finish</option>
 </select>
   </div>
 
@@ -574,12 +574,26 @@ function calculate() {
   total *= Number(sizeSelect.value) || 1;
   total *= Number(conditionSelect.value) || 1;
 
+  const isLuxury = pkgSelect.value === "155";
+
   addons.forEach(addon => {
-    if (addon.checked) total += Number(addon.value) || 0;
+    const includedInLuxury = addon.dataset.included === "luxury";
+
+    if (isLuxury && includedInLuxury) {
+      // Auto-check & disable included addons
+      addon.checked = true;
+      addon.disabled = true;
+    } else {
+      addon.disabled = false;
+      if (addon.checked) {
+        total += Number(addon.value) || 0;
+      }
+    }
   });
 
   priceOutput.textContent = "$" + Math.round(total);
 }
+
 
 // Recalculate whenever inputs change
 [pkgSelect, sizeSelect, conditionSelect, ...addons].forEach(el => {
