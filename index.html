@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+
   .msg-btn {
   background: #f5f5f5;
   color: #f5f5f5;
@@ -331,9 +332,52 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   box-shadow: 0 18px 35px var(--gold-soft);
 }
 
+/* TOP NAV */
+.top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #0d0d0d;
+  border-bottom: 1px solid #222;
+  z-index: 1000;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.nav-links a {
+  margin-left: 22px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+  body {
+  padding-top: 70px;
+}
 
 </style>
+  
 </head>
+  <section id="about">...</section>
+<section id="packages">...</section>
+<section id="referral">...</section>
+<section id="reviews">...</section>
+<section id="contact">...</section>
 
 
 
@@ -500,6 +544,22 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
     </a>
   </div>
   <body>
+    <nav class="top-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      Reset <span class="accent">Auto</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#packages">Packages</a>
+      <a href="#referral">Refer</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
 </section>
   <section>
   <h2>
