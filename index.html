@@ -377,9 +377,11 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
 }
 
 /* Remove focus dots / outlines */
-.nav-links a:focus {
-  outline: none;
+.nav-links a:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
 }
+
 
 /* HAMBURGER */
 .hamburger {
@@ -448,8 +450,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
 
 <!-- ABOUT -->
 <!-- ABOUT -->
-<section>
-    <section id="about">...</section>
+<section id="about">
   <h2>
     Mobile Detailing in <span class="accent">Cook County</span>
   </h2>
@@ -468,8 +469,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
 </section>
 
 <!-- PACKAGES -->
-<section>
-  <section id="packages">...</section>
+<section id="packages">
   <h2>Detailing Packages</h2>
   <div class="packages">
     <!-- EXTERIOR RESET -->
@@ -554,8 +554,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   </div>
 </section>
 <!-- REFERRAL PROGRAM -->
-<section>
-  <section id="referral">...</section>
+<section id="referral">
   <h2>
     Refer a Friend, <span class="accent">Get $25</span>
   </h2>
@@ -616,14 +615,26 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
       <span></span>
       <span></span>
       <span></span>
+       <!-- PAGE CONTENT STARTS HERE -->
+  <section class="hero">...</section>
+
+  <section id="about">...</section>
+
+  <section id="packages">...</section>
+
+  <section id="referral">...</section>
+
+  <section id="reviews">...</section>
+
+  <section id="contact">...</section>
+
     </div>
   </div>
 </nav>
 
 
 </section>
-  <section>
-      <section id="reviews">...</section>
+<section id="reviews">
   <h2>
     Trusted by <span class="accent">Local Drivers</span>
   </h2>
@@ -780,8 +791,7 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
 
 <!-- CONTACT -->
 <!-- CONTACT -->
-<section>
-  <section id="contact">...</section>
+<section id="contact">
   <h2>Get in Touch</h2>
 
   <p style="max-width: 700px; margin: 12px auto 25px; color: var(--gray);">
@@ -928,7 +938,8 @@ pkgSelect.addEventListener('change', updateLuxuryAddons);
   window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
 
-    if (currentScroll > lastScroll && currentScroll > 80) {
+    if (currentScroll > lastScroll && currentScroll > nav.offsetHeight)
+ {
       nav.classList.add("nav-hidden");
     } else {
       nav.classList.remove("nav-hidden");
@@ -943,6 +954,12 @@ pkgSelect.addEventListener('change', updateLuxuryAddons);
   hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("open");
   });
+   document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+  });
+});
+
 </script>
 
 
