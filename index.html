@@ -938,7 +938,8 @@ pkgSelect.addEventListener('change', updateLuxuryAddons);
   window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
 
-    if (currentScroll > lastScroll && currentScroll > nav.offsetHeight)
+ if (currentScroll > lastScroll && currentScroll > 80)
+
  {
       nav.classList.add("nav-hidden");
     } else {
