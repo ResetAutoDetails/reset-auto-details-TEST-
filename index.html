@@ -337,9 +337,17 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   position: fixed;
   top: 0;
   width: 100%;
-  background: #0d0d0d;
+  background: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid #222;
   z-index: 1000;
+  transform: translateY(0);
+  transition: transform 0.35s ease;
+}
+
+/* Hidden when scrolling down */
+.top-nav.nav-hidden {
+  transform: translateY(-100%);
 }
 
 .nav-inner {
@@ -356,14 +364,65 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
   font-size: 1.1rem;
 }
 
+/* Desktop links */
 .nav-links a {
   margin-left: 22px;
   font-weight: 600;
   font-size: 0.95rem;
+  text-decoration: none;
 }
 
 .nav-links a:hover {
   color: var(--red);
+}
+
+/* Remove focus dots / outlines */
+.nav-links a:focus {
+  outline: none;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #0d0d0d;
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .nav-links a {
+    margin: 16px 0;
+    font-size: 1rem;
+  }
+
+  .nav-links.open {
+    max-height: 300px;
+  }
 }
 
   body {
@@ -539,26 +598,55 @@ footer { text-align:center; padding:40px; border-top:1px solid #222; color:var(-
       Text Us to Refer
     </a>
   </div>
-  <body>
-    <nav class="top-nav">
-  <div class="nav-inner">
-    <div class="nav-logo">
-      Reset <span class="accent">Auto</span>
-    </div>
+  <script>
+  let lastScroll = 0;
+  const nav = document.querySelector(".top-nav");
 
-    <div class="nav-links">
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 80) {
+      nav.classList.add("nav-hidden");
+    } else {
+      nav.classList.remove("nav-hidden");
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+</script>
+
+  <body>
+   <nav class="top-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">Reset Auto Details</div>
+
+    <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#packages">Packages</a>
-      <a href="#referral">Refer</a>
+      <a href="#refer">Refer</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
 </nav>
 
+
 </section>
-  <section id="reviews">...</section>
   <section>
+      <section id="reviews">...</section>
   <h2>
     Trusted by <span class="accent">Local Drivers</span>
   </h2>
